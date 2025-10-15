@@ -6,21 +6,24 @@ import Results from "./components/Results";
 import CustomForm from "./components/CustomForm";
 
 function App() {
-  const router = createBrowserRouter([
-    {
-      path: "/my-quiz",
-      element: <CustomForm />,
-      errorElement: <ErrorPage />,
-    },
-    {
-      path: "quiz",
-      element: <Questions />,
-    },
-    {
-      path: "results",
-      element: <Results />,
-    },
-  ]);
+  const router = createBrowserRouter(
+    [
+      {
+        path: "/",
+        element: <CustomForm />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "quiz",
+        element: <Questions />,
+      },
+      {
+        path: "results",
+        element: <Results />,
+      },
+    ],
+    { basename: "/my-quiz" }
+  );
 
   return (
     <main>

@@ -59,7 +59,7 @@ export default function Results() {
           key="resetButton"
           type="button"
           onClick={() => {
-            navigate("/my-quiz");
+            navigate("/");
           }}
         >
           Reset
