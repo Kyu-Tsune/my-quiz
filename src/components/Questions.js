@@ -25,14 +25,12 @@ export default function Questions() {
   const fetchQuestions = async (ignore) => {
     setIsLoading(true);
     setError(null);
-    console.log("in Questions.useEffect()");
     try {
       const requestUrl = `https://opentdb.com/api.php?amount=5&category=${category}&difficulty=${difficulty}&type=multiple`;
       const response = await fetch(requestUrl);
       const data = await response.json();
 
       const formattedQuestions = data.results?.map((q, index) => {
-        console.log(q);
         const allAnswers = [...q.incorrect_answers, q.correct_answer];
         const shuffledAnswers = allAnswers.sort(() => Math.random() - 0.5);
 
