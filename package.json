@@ -1,6 +1,7 @@
 {
   "name": "my-quiz",
   "version": "0.1.0",
+  "homepage": "https://kyu-tsune.github.io/my-quiz",
   "private": true,
   "dependencies": {
     "@tanstack/react-query": "^5.90.2",
@@ -9,6 +10,7 @@
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "gh-pages": "^6.3.0",
     "he": "^1.2.0",
     "prop-types": "^15.8.1",
     "react": "^19.2.0",
@@ -20,6 +22,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
