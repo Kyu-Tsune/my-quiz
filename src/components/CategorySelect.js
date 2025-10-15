@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export default function CategorySelect({ onChange, value }) {
-  const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState([""]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -49,7 +49,9 @@ export default function CategorySelect({ onChange, value }) {
       value={value}
       onChange={onChange}
     >
-      <option value="">-- Sélectionnez une catégorie --</option>
+      <option key="0" value="">
+        -- Sélectionnez une catégorie --
+      </option>
       {categories.map((c) => (
         <option key={c.id} value={c.id}>
           {c.name}
