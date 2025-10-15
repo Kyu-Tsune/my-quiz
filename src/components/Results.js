@@ -5,6 +5,12 @@ export default function Results() {
   let nbCorrectAnswers = 0;
   const { selectedAnswers, questions } = location.state;
 
+  function finalResultBackgroundColor() {
+    if (nbCorrectAnswers <= 1) return "red";
+    if (nbCorrectAnswers >= 4) return "green";
+    return "yellow";
+  }
+
   return (
     <>
       <h1>Results</h1>
@@ -45,13 +51,15 @@ export default function Results() {
           </div>
         </div>
       ))}
-      <div>Vous avez sélectionné {nbCorrectAnswers}/5 bonnes réponses</div>
+      <div style={{ backgroundColor: finalResultBackgroundColor() }}>
+        Vous avez sélectionné {nbCorrectAnswers}/5 bonnes réponses
+      </div>
       <div>
         <button
           key="resetButton"
           type="button"
           onClick={() => {
-            navigate("/");
+            navigate("/my-quiz");
           }}
         >
           Reset

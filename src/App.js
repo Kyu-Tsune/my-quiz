@@ -8,7 +8,7 @@ import CustomForm from "./components/CustomForm";
 function App() {
   const router = createBrowserRouter([
     {
-      path: "/",
+      path: "/my-quiz",
       element: <CustomForm />,
       errorElement: <ErrorPage />,
     },
